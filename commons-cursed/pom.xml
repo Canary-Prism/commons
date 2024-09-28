@@ -5,12 +5,12 @@
   <parent>
     <artifactId>commons</artifactId>
     <groupId>io.github.canary-prism</groupId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
   </parent>
 
   <groupId>io.github.canary-prism</groupId>
   <artifactId>commons-cursed</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <name>commons-cursed</name>
   <description>
