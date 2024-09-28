@@ -164,6 +164,12 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+      </plugin>
+    </plugins>
   </build>
   
   <modules>
