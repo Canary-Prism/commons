@@ -4,17 +4,27 @@
 
   <parent>
     <artifactId>commons</artifactId>
-    <groupId>canaryprism</groupId>
+    <groupId>io.github.canary-prism</groupId>
     <version>1.0.0</version>
   </parent>
 
-  <groupId>canaryprism</groupId>
+  <groupId>io.github.canary-prism</groupId>
   <artifactId>commons-cursed</artifactId>
   <version>1.0.0</version>
 
   <name>commons-cursed</name>
+  <description>
+    A collection of cursed utilities for the commons library. <!-- this was ai generated i have no idea what it just put-->
+  </description>
   <url>https://github.com/Canary-Prism/commons</url>
 
+  <licenses>
+    <license>
+      <name>GNU GPL v3</name>
+      <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <dependencies>
     <dependency>
@@ -38,6 +48,13 @@
       <plugin>
         <groupId>org.sonatype.central</groupId>
         <artifactId>central-publishing-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

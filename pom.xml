@@ -3,7 +3,7 @@
   
   <packaging>pom</packaging>
 
-  <groupId>canaryprism</groupId>
+  <groupId>io.github.canary-prism</groupId>
   <artifactId>commons</artifactId>
   <version>1.0.0</version>
 
@@ -17,6 +17,22 @@
       <url>https://maven.pkg.github.com/Canary-Prism/commons</url>
     </repository>
   </distributionManagement>
+
+  <scm>
+    <url>https://github.com/Canary-Prism/commons</url> 
+    <connection>scm:git:git://github.com/Canary-Prism/commons.git</connection> 
+    <developerConnection>scm:git:ssh://git@github.com:Canary-Prism/commons.git</developerConnection> <!-- i don't know what the hell this is and github tells me it shouldn't even work but oh well who cares -->
+    <tag>HEAD</tag>
+  </scm>
+
+
+  <developers>
+    <developer>
+      <id>Canary-Prism</id> 
+      <name>Canary Prism</name>
+      <email>canaryprsn@gmail.com</email>
+    </developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -113,6 +129,33 @@
           <configuration>
             <publishingServerId>central</publishingServerId>
           </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>3.10.0</version> <!-- Use the latest version -->
+          <executions>
+            <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+              <phase>package</phase> <!-- Attach to the package phase -->
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>3.2.7</version>
+          <executions>
+            <execution>
+              <id>sign-artifacts</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>sign</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
