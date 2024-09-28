@@ -18,6 +18,22 @@
   </description>
   <url>https://github.com/Canary-Prism/commons</url>
 
+  <scm>
+    <url>https://github.com/Canary-Prism/commons</url> 
+    <connection>scm:git:git://github.com/Canary-Prism/commons.git</connection> 
+    <developerConnection>scm:git:ssh://git@github.com:Canary-Prism/commons.git</developerConnection> <!-- i don't know what the hell this is and github tells me it shouldn't even work but oh well who cares -->
+    <tag>HEAD</tag>
+  </scm>
+
+
+  <developers>
+    <developer>
+      <id>Canary-Prism</id> 
+      <name>Canary Prism</name>
+      <email>canaryprsn@gmail.com</email>
+    </developer>
+  </developers>
+
   <licenses>
     <license>
       <name>GNU GPL v3</name>
