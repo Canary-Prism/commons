@@ -8,7 +8,18 @@
   <version>1.0.1</version>
 
   <name>commons</name>
+  <description>
+    commons library :3
+  </description>
   <url>https://github.com/Canary-Prism/commons</url>
+
+  <licenses>
+    <license>
+      <name>GNU GPL v3</name>
+      <url>https://www.gnu.org/licenses/gpl-3.0.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <distributionManagement>
     <repository>
