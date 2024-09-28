@@ -2,9 +2,10 @@ package canaryprism.commons.cursed;
 
 /**
  * <p>
- * A runtime exception that is thrown when the 
- * {@link CursedUtils#catchExceptions()} or 
- * {@link CursedUtils#catchExceptionsWithParams()} method fails
+ * A runtime exception that is thrown when the
+ * {@link canaryprism.commons.cursed.CursedUtils#catchExceptions()} or
+ * {@link canaryprism.commons.cursed.CursedUtils#catchExceptionsWithParams()}
+ * method fails
  * </p>
  */
 public class CursedException extends RuntimeException {
