@@ -39,7 +39,7 @@ public class CursedUtils {
     static {
         STACK_WALKER = StackWalker.getInstance(StackWalker.Option.RETAIN_CLASS_REFERENCE);
     }
-    private static boolean processing = false;
+    private static final ThreadLocal<Boolean> processing = ThreadLocal.withInitial(() -> false);
 
 
     /**
@@ -75,7 +75,7 @@ public class CursedUtils {
      */
     @SuppressWarnings("unchecked")
     public static <T> Optional<T> catchExceptions() {
-        if (processing)
+        if (processing.get())
             return null;
         return STACK_WALKER.walk((frames) -> {
             StackWalker.StackFrame frame;
@@ -90,7 +90,7 @@ public class CursedUtils {
             if (possibleMethod.isPresent()) {
                 Method method = possibleMethod.get();
                 if (method.accessFlags().contains(AccessFlag.STATIC)) {
-                    processing = true;
+                    processing.set(true);
                     Optional<T> result;
                     try {
                         method.setAccessible(true);
@@ -106,7 +106,7 @@ public class CursedUtils {
                     } catch (IllegalAccessException impossible) {
                         throw new RuntimeException(impossible);
                     }
-                    processing = false;
+                    processing.set(false);
                     return result;
                 } else {
                     throw new CursedException("Calling method needs to be static");
@@ -144,7 +144,7 @@ public class CursedUtils {
      */
     @SuppressWarnings("unchecked")
     public static <T> Optional<T> catchExceptionsWithParams(Object... params) {
-        if (processing)
+        if (processing.get())
             return null;
         return STACK_WALKER.walk((frames) -> {
             StackWalker.StackFrame frame;
@@ -159,7 +159,7 @@ public class CursedUtils {
             if (possibleMethod.isPresent()) {
                 Method method = possibleMethod.get();
                 if (method.accessFlags().contains(AccessFlag.STATIC)) {
-                    processing = true;
+                    processing.set(true);
                     Optional<T> result;
                     try {
                         method.setAccessible(true);
@@ -177,7 +177,7 @@ public class CursedUtils {
                     } catch (IllegalAccessException impossible) {
                         throw new RuntimeException(impossible);
                     }
-                    processing = false;
+                    processing.set(false);
                     return result;
                 } else {
                     throw new CursedException("Calling method needs to be static");
