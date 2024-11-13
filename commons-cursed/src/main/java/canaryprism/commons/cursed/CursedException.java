@@ -4,7 +4,7 @@ package canaryprism.commons.cursed;
  * <p>
  * A runtime exception that is thrown when the
  * {@link canaryprism.commons.cursed.CursedUtils#catchExceptions()} or
- * {@link canaryprism.commons.cursed.CursedUtils#catchExceptionsWithParams()}
+ * {@link canaryprism.commons.cursed.CursedUtils#catchExceptionsWithParams(Object...)}
  * method fails
  * </p>
  */
