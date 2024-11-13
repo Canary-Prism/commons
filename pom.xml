@@ -147,7 +147,6 @@
           <configuration>
             <failOnError>false</failOnError>
             <failOnWarnings>false</failOnWarnings>
-            <additionalparam>-Xdoclint:none</additionalparam> <!-- because please just shut up you are not a linter -->
           </configuration>
           <executions>
             <execution>
