@@ -89,4 +89,7 @@ subprojects {
         options.encoding = "UTF-8"
     }
 
+    tasks.withType<PublishToMavenRepository>().configureEach {
+        notCompatibleWithConfigurationCache("Publishing tasks involve non-cacheable external interactions.")
+    }
 }
